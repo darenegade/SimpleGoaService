@@ -1,0 +1,18 @@
+hash: ef494e851d9825951664ba7614434e418a16d176ab52e67767f5f57afb829bda
+updated: 2017-01-31T18:25:33.292787311+01:00
+imports:
+- name: github.com/dimfeld/httppath
+  version: c8e499c3ef3c3e272ed8bdcc1ccf39f73c88debc
+- name: github.com/goadesign/goa
+  version: 1efaddd9bba51fca5e345d5c086bfeca986a36da
+  subpackages:
+  - design
+  - design/apidsl
+  - dslengine
+- name: github.com/manveru/faker
+  version: 717f7cf83fb78669bfab612749c2e8ff63d5be11
+- name: github.com/satori/go.uuid
+  version: b061729afc07e77a8aa4fad0a2fd840958f1942a
+- name: github.com/zach-klippenstein/goregen
+  version: 795b5e3961ea1912fde60af417ad85e86acc0d6a
+testImports: []

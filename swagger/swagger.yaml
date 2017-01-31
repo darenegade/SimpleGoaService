@@ -1,0 +1,54 @@
+consumes:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+definitions:
+  HelloHelloPayload:
+    example:
+      name: Et alias.
+    properties:
+      name:
+        example: Et alias.
+        type: string
+    title: HelloHelloPayload
+    type: object
+host: localhost:8080
+info:
+  description: A simple Hello World service
+  title: Hello World Service
+  version: ""
+paths:
+  /hello:
+    post:
+      description: Say Hello to the service
+      operationId: hello#hello
+      parameters:
+      - in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/HelloHelloPayload'
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+      schemes:
+      - http
+      summary: hello hello
+      tags:
+      - hello
+produces:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+responses:
+  NotFound:
+    description: Not Found
+  OK:
+    description: OK
+schemes:
+- http
+swagger: "2.0"
