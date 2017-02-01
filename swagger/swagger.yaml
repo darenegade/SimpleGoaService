@@ -32,8 +32,6 @@ paths:
       responses:
         "200":
           description: OK
-        "404":
-          description: Not Found
       schemes:
       - http
       summary: hello hello
@@ -45,10 +43,18 @@ produces:
 - application/gob
 - application/x-gob
 responses:
-  NotFound:
-    description: Not Found
   OK:
     description: OK
 schemes:
 - http
+securityDefinitions:
+  jwt:
+    description: |2-
+
+
+      **Security Scopes**:
+        * `api:access`: API access
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

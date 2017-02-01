@@ -12,8 +12,19 @@ var _ = API("HelloWorld", func() {                     // API defines the micros
 	Host("localhost:8080")
 })
 
+// JWT defines a security scheme using JWT.  The scheme uses the "Authorization" header to lookup
+// the token.  It also defines then scope "api".
+var JWT = JWTSecurity("jwt", func() {
+	Header("Authorization")
+	Scope("api:access", "API access") // Define "api:access" scope
+})
+
 var _ = Resource("hello", func() {                // Resources group related API endpoints
 	BasePath("/hello")                       // together. They map to REST resources for REST
+
+	Security(JWT, func() { // Use JWT to auth requests to this endpoint
+		Scope("api:access") // Enforce presence of "api" scope in JWT claims.
+	})
 
 	Action("hello", func() {                    // Actions define a single API endpoint together
 		Description("Say Hello to the service")    // with its path, parameters (both path
@@ -22,6 +33,6 @@ var _ = Resource("hello", func() {                // Resources group related API
 			Member("name")
 		})
 		Response(OK)                       // Responses define the shape and status code
-		Response(NotFound)                 // of HTTP responses.
+		NoSecurity()
 	})
 })

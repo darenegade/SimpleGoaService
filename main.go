@@ -28,3 +28,4 @@ func main() {
 		service.LogError("startup", "err", err)
 	}
 }
+
