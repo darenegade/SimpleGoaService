@@ -1,8 +1,8 @@
 package main
 
 import (
-	"SimpleGoaService/app"
 	"github.com/goadesign/goa"
+	"github.com/darenegade/SimpleGoaService/app"
 )
 
 // HelloController implements the hello resource.

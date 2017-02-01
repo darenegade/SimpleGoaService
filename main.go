@@ -3,9 +3,10 @@
 package main
 
 import (
-	"SimpleGoaService/app"
+
 	"github.com/goadesign/goa"
 	"github.com/goadesign/goa/middleware"
+	"github.com/darenegade/SimpleGoaService/app"
 )
 
 func main() {
